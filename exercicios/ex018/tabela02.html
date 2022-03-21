@@ -13,6 +13,14 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
+        }
+
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
         }
 
         td, th{
@@ -24,9 +32,21 @@
             text-align: right;
         }
 
-        thead, tfoot {
+        thead, tfoot { 
             background-color: gray;
             color: white;
+        }
+
+        thead > tr > th { /* tática para deixar o titulo da tabela com muitas linhas e colunas acompanhando a rolagem */
+            position: sticky;
+            top: -1px;
+            background-color: grey;
+        }
+
+        tbody > tr:nth-child(2n) {
+            background-color: lightgrey; 
+            /* (2n) é de 2 em 2, (3n) é de 3 em 3, even só nas linhas par, odd só linha impar */
+
         }
 
     </style>
@@ -34,10 +54,11 @@
 <body>
     <h1>Uso de Tabelas Grandes</h1>
     <table>
+        <caption>População das Unidades Federativas</caption>
         <thead>
             <tr>
-                <th>Estados</th>
-                <th>População</th>
+                <th scope="col">Estados</th>
+                <th scope="col" style="width: 100px;">População</th>
             </tr>
         </thead>
         <tbody>
@@ -153,7 +174,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de habitantes</th>
+                <th scope="row">Total de habitantes</th>
                 <td class="num"><strong>213 317 639</strong></td>
             </tr>
         </tfoot>
