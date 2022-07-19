@@ -9,8 +9,13 @@
 <body>
     <h1>Testando o uso de iframe</h1>
     <p>Acessando o site do 
-        
-        <iframe src="https://www.cursoemvideo.com/cursos/" frameborder="0"></iframe>
+        <!--Tamanho padrão 300 largura x 150 altura
+            width altera largura heigth altera a altura - escritos dentro da tag 
+            A configuração feita no CSS é soberana na configuração-->
+        <iframe src="https://www.cursoemvideo.com/cursos/" frameborder="0">
+            <!--Caso o navegador não seja compativel com a iframe aparece só a mensagem que está dentro. A dica é criar o link nessa area.-->
+            <a href="https://www.cursoemvideo.com/cursos/" target="_blank">Curso em Video</a>
+        </iframe>
 
         para aprender a programar.</p>
 </body>
